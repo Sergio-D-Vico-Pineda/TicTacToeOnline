@@ -3,15 +3,12 @@ package com.example.tictactoeonline
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.tictactoeonline.databinding.ActivityGameBinding
 
 class GameActivity : AppCompatActivity(), View.OnClickListener {
 
-    lateinit var binding: ActivityGameBinding
+    private lateinit var binding: ActivityGameBinding
 
     private var gameModel : GameModel? = null
 
@@ -46,7 +43,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    fun setUI() {
+    private fun setUI() {
         gameModel?.apply {
 
             binding.btn0.text = filledPos[0]
@@ -65,7 +62,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
                 when(gameStatus) {
                     GameStatus.CREATED -> {
                         binding.startGameBtn.visibility = View.INVISIBLE
-                        "Game ID : " + gameId
+                        "Game ID : $gameId"
                     }
                     GameStatus.JOINED -> {
                         "Click on start game"
@@ -73,16 +70,16 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
                     GameStatus.IN_PROGRESS -> {
                         binding.startGameBtn.visibility = View.INVISIBLE
                         when(GameData.myID) {
-                            currentPlayer -> "Your turn"
-                            else -> currentPlayer + " turn"
+                            currentPlayer -> getString(R.string.your_turn)
+                            else -> "$currentPlayer turn"
                         }
-                        currentPlayer + " turn"
+                        "$currentPlayer turn"
                     }
                     GameStatus.FINISHED -> {
                         if(winner.isNotEmpty()) {
                             when(GameData.myID) {
                                 winner -> "You Won"
-                                else -> winner + " Lost"
+                                else -> "$winner Lost"
                             }
                         }
                         else "Draw"
@@ -92,7 +89,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    fun startGame() {
+    private fun startGame() {
         gameModel?.apply {
             updateGameData(
                 GameModel(
@@ -103,11 +100,11 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    fun updateGameData(model : GameModel) {
+    private fun updateGameData(model : GameModel) {
         GameData.saveGameModel(model)
     }
 
-    fun checkForWinner() {
+    private fun checkForWinner() {
         val winningPos = arrayOf(
             intArrayOf(0,1,2),
             intArrayOf(3,4,5),
@@ -130,7 +127,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
                     winner = filledPos[i[0]]
                 }
             }
-            if (filledPos.none() { it.isEmpty() }) {
+            if (filledPos.none { it.isEmpty() }) {
                 gameStatus = GameStatus.FINISHED
             }
 

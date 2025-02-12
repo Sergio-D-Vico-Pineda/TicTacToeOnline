@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "84407854203",
+    "project_id": "ivan-tic-tac-toe",
+    "storage_bucket": "ivan-tic-tac-toe.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84407854203:android:35a5decb4619862fd7eede",
+        "android_client_info": {
+          "package_name": "com.example.ivantictactoeonline"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa8aVwXMQFFQn-Wdy1Hmgpyl62dwqNsbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
