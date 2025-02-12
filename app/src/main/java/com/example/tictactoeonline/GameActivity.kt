@@ -155,7 +155,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
             if (filledPos[clickedPos].isEmpty()) {
 
                 filledPos[clickedPos] = currentPlayer
-                currentPlayer = if (currentPlayer == "X") "X" else "O"
+                currentPlayer = if (currentPlayer == "X") "O" else "X"
                 checkForWinner()
                 updateGameData(this)
             }
