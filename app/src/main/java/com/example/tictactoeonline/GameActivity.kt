@@ -79,7 +79,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
                         if(winner.isNotEmpty()) {
                             when(GameData.myID) {
                                 winner -> "You Won"
-                                else -> "$winner Lost"
+                                else -> "$winner Wins"
                             }
                         }
                         else "Draw"
@@ -155,7 +155,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
             if (filledPos[clickedPos].isEmpty()) {
 
                 filledPos[clickedPos] = currentPlayer
-                currentPlayer = if (currentPlayer == "X") "O" else "X"
+                currentPlayer = if (currentPlayer == "X") "X" else "O"
                 checkForWinner()
                 updateGameData(this)
             }
