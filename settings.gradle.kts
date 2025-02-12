@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "IvanTicTacToeOnline"
+rootProject.name = "TicTacToeOnline"
 include(":app")

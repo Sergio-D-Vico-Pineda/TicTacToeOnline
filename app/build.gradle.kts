@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.ivantictactoeonline"
+    namespace = "com.example.tictactoeonline"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.ivantictactoeonline"
+        applicationId = "com.example.tictactoeonline"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

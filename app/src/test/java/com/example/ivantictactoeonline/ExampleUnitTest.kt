@@ -1,4 +1,4 @@
-package com.example.ivantictactoeonline
+package com.example.tictactoeonline
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.example.ivantictactoeonline
+package com.example.tictactoeonline
 
 import kotlin.random.Random
 

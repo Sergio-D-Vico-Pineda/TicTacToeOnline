@@ -1,10 +1,10 @@
-package com.example.ivantictactoeonline
+package com.example.tictactoeonline
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.ivantictactoeonline.databinding.ActivityMainBinding
+import com.example.tictactoeonline.databinding.ActivityMainBinding
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 import kotlin.random.Random
